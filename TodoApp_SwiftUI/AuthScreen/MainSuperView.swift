@@ -8,10 +8,20 @@
 import SwiftUI
 
 struct MainSuperView: View {
+    
+    @StateObject var viewModel = MainViewModel()
+    
     var body: some View {
-        NavigationView {
-            AuthView()
-        }
+        
+        if viewModel.isSignedIn, !viewModel.currentUserID.isEmpty {
+                TodoMainListView()
+            } else {
+                
+                AuthView()
+                
+            }
+           
+        
     }
 }
 
