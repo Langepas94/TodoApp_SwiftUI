@@ -13,44 +13,41 @@ struct AuthView: View {
     @State private var password = ""
     
     var body: some View {
-        
-        NavigationView {
+        NavigationStack {
             VStack {
+                
                 // MARK: - Header
-                HeaderAuthView()
+                
+                HeaderAuthView(title: "ToDo", subtitle: "Get all things done", angle: 15, backgroundColor: .pink)
                 
                 // MARK: - Login
                 Form {
+                    Spacer().listRowSeparator(.hidden)
                     TextField("Email address", text: $email)
                         .textFieldStyle(.roundedBorder)
+                        .autocapitalization(.none)
+                    
                     SecureField("Password", text: $password)
                         .textFieldStyle(.roundedBorder)
                         .listRowSeparator(.hidden)
-                    
-                    Button {
+
+                    ButtonHelperView(title: "Log in", backgroundColor: .blue, action: {
                         //
-                    } label: {
-                        ZStack {
-                            RoundedRectangle(cornerRadius: 30)
-                                .foregroundColor(Color.blue)
-                            
-                            Text("Log in")
-                                .foregroundColor(Color.white)
-                                .bold()
-                        }
-                    }
-                    .listRowSeparator(.hidden)
+                    })
+                    
                 }
-                
+                .offset(y: -50)
+
                 // MARK: - Create an Account
-                
+
                 VStack {
                     Text("New around here?")
-                    
-                   NavigationLink("Create an account", destination: RegisterView())
-                    .padding(.bottom, 40)
+
+                    NavigationLink("Create an account", destination: RegisterView())
+
                 }
-                
+                .padding(.bottom, 50)
+//
                 Spacer()
             }
         }
