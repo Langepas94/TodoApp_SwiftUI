@@ -28,6 +28,7 @@ struct ButtonHelperView: View {
                     .bold()
             }
         }
+        .buttonStyle(.plain)
         .padding()
     }
 }

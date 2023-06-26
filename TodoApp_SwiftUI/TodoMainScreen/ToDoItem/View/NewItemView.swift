@@ -28,7 +28,7 @@ struct NewItemView: View {
                 
                 DatePicker("Due Date", selection: $viewModel.dueDate)
                     .datePickerStyle(.graphical)
-                
+
                 ButtonHelperView(title: "Save", backgroundColor: .pink) {
                     if viewModel.canSave {
                         viewModel.save()
