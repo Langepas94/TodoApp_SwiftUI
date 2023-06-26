@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		440D8F192A496C5D0035AC4F /* ToDoListItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440D8F182A496C5D0035AC4F /* ToDoListItemViewModel.swift */; };
+		440D8F1B2A4979340035AC4F /* ToDoListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440D8F1A2A4979340035AC4F /* ToDoListItemView.swift */; };
 		4455D0532A42F22B000BDD0C /* ButtonHelperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4455D0522A42F22B000BDD0C /* ButtonHelperView.swift */; };
 		4455D0562A42FCC9000BDD0C /* extension + Encodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4455D0552A42FCC9000BDD0C /* extension + Encodable.swift */; };
 		4455D0582A42FF56000BDD0C /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4455D0572A42FF56000BDD0C /* MainViewModel.swift */; };
@@ -56,6 +57,7 @@
 
 /* Begin PBXFileReference section */
 		440D8F182A496C5D0035AC4F /* ToDoListItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListItemViewModel.swift; sourceTree = "<group>"; };
+		440D8F1A2A4979340035AC4F /* ToDoListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListItemView.swift; sourceTree = "<group>"; };
 		4455D0522A42F22B000BDD0C /* ButtonHelperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonHelperView.swift; sourceTree = "<group>"; };
 		4455D0552A42FCC9000BDD0C /* extension + Encodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "extension + Encodable.swift"; sourceTree = "<group>"; };
 		4455D0572A42FF56000BDD0C /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
@@ -292,6 +294,7 @@
 			isa = PBXGroup;
 			children = (
 				44C28F1D2A42CE7500B53C8D /* NewItemView.swift */,
+				440D8F1A2A4979340035AC4F /* ToDoListItemView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -475,6 +478,7 @@
 				44C28EE32A42C79500B53C8D /* TodoMainListView.swift in Sources */,
 				44C28F362A42D08A00B53C8D /* AuthView.swift in Sources */,
 				44C28F1E2A42CE7500B53C8D /* NewItemView.swift in Sources */,
+				440D8F1B2A4979340035AC4F /* ToDoListItemView.swift in Sources */,
 				4455D0562A42FCC9000BDD0C /* extension + Encodable.swift in Sources */,
 				44C28F252A42CF2F00B53C8D /* ToDoMainScreenViewModel.swift in Sources */,
 				44C28F3E2A42D90300B53C8D /* RegisterView.swift in Sources */,

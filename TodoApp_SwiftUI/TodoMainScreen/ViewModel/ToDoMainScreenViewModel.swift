@@ -14,5 +14,9 @@ class ToDoMainScreenViewModel: ObservableObject {
     
     @Published var showingNewItemView = false
     
+    func delete(itemID: String) {
+        
+    }
+    
     init() {}
 }

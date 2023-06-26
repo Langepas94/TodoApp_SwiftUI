@@ -14,6 +14,7 @@ class MainViewModel: ObservableObject {
     
     public var isSignedIn: Bool {
         return Auth.auth().currentUser != nil
+        
     }
     
     func checkAuth() {
