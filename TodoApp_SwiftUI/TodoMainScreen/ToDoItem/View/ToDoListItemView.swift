@@ -11,7 +11,7 @@ struct ToDoListItemView: View {
     
     let item: ToDoListItemModel
     
-    @StateObject var viewModel = ProfileViewModel()
+    @StateObject var viewModel = ToDoMToDoListItemViewModelainScreenViewModel()
     
     var body: some View {
         HStack {
@@ -30,6 +30,7 @@ struct ToDoListItemView: View {
                 viewModel.toggleIsDone(item: item)
             } label: {
                 Image(systemName: item.isDone ? "checkmark.circle.fill" : "circle")
+                    .foregroundColor(Color.blue)
             }
 
         }
