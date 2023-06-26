@@ -11,6 +11,8 @@ import FirebaseFirestore
 
 class RegisterViewModel: ObservableObject {
     
+    // MARK: - public properties
+    
     @Published var name: String = ""
     @Published var email: String = ""
     @Published var password: String = ""
@@ -32,7 +34,6 @@ class RegisterViewModel: ObservableObject {
     
     private func insertUserToDatabase(id: String) {
         let newUser = UserModel(id: id, name: name, email: email, joined: Date().timeIntervalSince1970)
-        
         let dataBase = Firestore.firestore()
         dataBase.collection("users")
             .document(id)
@@ -55,7 +56,6 @@ class RegisterViewModel: ObservableObject {
             errorMessage = "Password need min. 6 charaters"
             return false
         }
-        
         return true
     }
     

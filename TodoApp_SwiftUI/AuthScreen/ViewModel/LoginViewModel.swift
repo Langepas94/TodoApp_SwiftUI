@@ -22,6 +22,8 @@ class LoginViewModel: ObservableObject {
         Auth.auth().signIn(withEmail: email, password: password)
     }
     
+    // MARK: - validate
+    
     private func validate() -> Bool {
         errorMessage = ""
         guard !email.trimmingCharacters(in: .whitespaces).isEmpty, !password.trimmingCharacters(in: .whitespaces).isEmpty else {
@@ -33,9 +35,9 @@ class LoginViewModel: ObservableObject {
             errorMessage = "Please enter valid email"
             return false
         }
-        
         return true
     }
     
+    // MARK: - init
     init() {}
 }

@@ -9,6 +9,8 @@ import SwiftUI
 
 struct HeaderAuthView: View {
     
+   // MARK: public properties
+    
     let title: String
     let subtitle: String
     let angle: Double
@@ -17,6 +19,7 @@ struct HeaderAuthView: View {
     var body: some View {
             
 // MARK: - Header Settings
+        
             ZStack {
                 RoundedRectangle(cornerRadius: 0)
                     .foregroundColor(backgroundColor)

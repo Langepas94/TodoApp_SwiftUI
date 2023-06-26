@@ -9,11 +9,18 @@ import SwiftUI
 
 struct RegisterView: View {
     
+    // MARK: - propeties
+    
     @StateObject var viewModel = RegisterViewModel()
+    
+    // MARK: - Body
     
     var body: some View {
         VStack {
+            
             HeaderAuthView(title: "Register", subtitle: "Start organizing with us", angle: -15, backgroundColor: .yellow)
+            
+            // MARK: Registration form ui
             
             Form {
                 Text(viewModel.errorMessage)
@@ -34,7 +41,6 @@ struct RegisterView: View {
                 ButtonHelperView(title: "Register", backgroundColor: .teal, action: {
                     viewModel.register()
                 })
-                
             }
             .offset(y: -50)
             Spacer()

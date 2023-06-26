@@ -13,8 +13,15 @@ import FirebaseFirestore
 ///
 class ToDoMainScreenViewModel: ObservableObject {
     
+    // MARK: - public properties
+    
     @Published var showingNewItemView = false
+    
+    // MARK: - private properties
+    
     private let userID: String
+    
+    // MARK: - public methods
     
     func delete(itemID: String) {
         let db = Firestore.firestore()
@@ -25,6 +32,8 @@ class ToDoMainScreenViewModel: ObservableObject {
             .document(itemID)
             .delete()
     }
+    
+    // MARK: - init
     
     init(userID: String) {
         self.userID = userID

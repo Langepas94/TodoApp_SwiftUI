@@ -9,8 +9,12 @@ import SwiftUI
 
 struct NewItemView: View {
     
+    // MARK: - public properties
+    
     @StateObject var viewModel = NewItemViewModel()
     @Binding var newItemPresented: Bool
+    
+    
     var body: some View {
         VStack {
             Text("New item")

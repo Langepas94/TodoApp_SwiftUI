@@ -11,6 +11,8 @@ import FirebaseFirestore
 
 class NewItemViewModel: ObservableObject {
     
+    // MARK: - public properties
+    
     @Published var title = ""
     @Published var dueDate = Date()
     @Published var showAlert = false
@@ -20,6 +22,8 @@ class NewItemViewModel: ObservableObject {
         guard dueDate >= Date().addingTimeInterval(-86400) else { return false }
         return true
     }
+    
+    // MARK: - public methods
     
     func save() {
         guard canSave else { return }
@@ -35,6 +39,8 @@ class NewItemViewModel: ObservableObject {
             .document(newID)
             .setData(newTodo.asDictionary())
     }
+    
+    // MARK: init
     
     init() {}
 }

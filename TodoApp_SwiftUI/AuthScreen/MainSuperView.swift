@@ -9,18 +9,20 @@ import SwiftUI
 
 struct MainSuperView: View {
     
+    // MARK: - public properties
+    
     @StateObject var viewModel = MainViewModel()
     
     var body: some View {
         
         if viewModel.isSignedIn, !viewModel.currentUserID.isEmpty {
-          accountView
-            } else {
-                
-                AuthView()
-                
-            }
+            accountView
+        } else {
+            AuthView()
+        }
     }
+    
+    // MARK: - account viewbuilder
     
     @ViewBuilder
     var accountView: some View {

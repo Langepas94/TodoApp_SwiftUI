@@ -9,9 +9,14 @@ import SwiftUI
 
 struct ProfileScreen: View {
     
+    // MARK: - public properties
+    
     @StateObject var viewModel = ProfileViewModel()
     
     var body: some View {
+        
+        // MARK: - navigation view
+        
         NavigationView {
             VStack {
                 if let user = viewModel.user {
@@ -19,7 +24,7 @@ struct ProfileScreen: View {
                 } else {
                     Text("Loading Profile")
                 }
-
+                
             }
             .navigationTitle("Profile")
         }
@@ -28,6 +33,8 @@ struct ProfileScreen: View {
         }
     }
     
+    // MARK: - profile builder
+    
     @ViewBuilder
     func profile(user: UserModel) -> some View {
         Image(systemName: "person.circle")
@@ -35,7 +42,9 @@ struct ProfileScreen: View {
             .aspectRatio(contentMode: .fit)
             .foregroundColor(Color.blue)
             .frame(width: 125, height: 125)
+        
         VStack(alignment: .leading) {
+            
             HStack {
                 Text("Name: ")
                     .bold()
@@ -65,7 +74,7 @@ struct ProfileScreen: View {
         }
         .tint(.red)
         .padding()
-
+        
         Spacer()
     }
 }

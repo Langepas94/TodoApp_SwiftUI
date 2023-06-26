@@ -10,9 +10,12 @@ import FirebaseAuth
 import FirebaseFirestore
 
 class ProfileViewModel: ObservableObject {
-    init() {}
+    
+    // MARK: - public properties
     
     @Published var user: UserModel? = nil
+    
+    // MARK: public methods
     
     func fetchUser() {
         guard let userID = Auth.auth().currentUser?.uid else { return }
@@ -27,7 +30,7 @@ class ProfileViewModel: ObservableObject {
                 }
             }
     }
-   
+    
     func logOut() {
         do {
             try Auth.auth().signOut()
@@ -35,4 +38,8 @@ class ProfileViewModel: ObservableObject {
             
         }
     }
+    
+    // MARK: - init
+    
+    init() {}
 }

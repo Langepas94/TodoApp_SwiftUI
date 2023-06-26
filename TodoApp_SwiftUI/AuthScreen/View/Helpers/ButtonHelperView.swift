@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ButtonHelperView: View {
     
+    // MARK: - public properties
+    
     let title: String
     let backgroundColor: Color
     let action: () -> Void
@@ -27,9 +29,7 @@ struct ButtonHelperView: View {
             }
         }
         .padding()
-        
     }
-    
 }
 
 struct ButtonHelperView_Previews: PreviewProvider {

@@ -20,13 +20,8 @@ struct AuthView: View {
                 HeaderAuthView(title: "ToDo", subtitle: "Get all things done", angle: 15, backgroundColor: .pink)
                 
                 // MARK: - Login
+                
                 Form {
-    
-//                    if !viewModel.errorMessage.isEmpty {
-//                        Text(viewModel.errorMessage)
-//                            .foregroundColor(.red)
-//                            .listRowSeparator(.hidden)
-//                    }
                     Text(viewModel.errorMessage)
                         .listRowSeparator(.hidden)
                         .foregroundColor(.red)
@@ -42,7 +37,6 @@ struct AuthView: View {
                     ButtonHelperView(title: "Log in", backgroundColor: .blue, action: {
                         viewModel.login()
                     })
-                    
                 }
                 .offset(y: -50)
 
@@ -50,12 +44,9 @@ struct AuthView: View {
 
                 VStack {
                     Text("New around here?")
-
                     NavigationLink("Create an account", destination: RegisterView())
-
                 }
                 .padding(.bottom, 50)
-//
                 Spacer()
             }
         }

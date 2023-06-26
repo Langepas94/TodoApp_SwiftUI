@@ -11,8 +11,7 @@ import FirebaseFirestore
 /// Primary tab
 /// viewmodel for single item of items view
 class ToDoMToDoListItemViewModelainScreenViewModel: ObservableObject {
-    init() {}
-    
+
     func toggleIsDone(item: ToDoListItemModel) {
     var newItem = item
         newItem.setDone(!item.isDone)
@@ -26,4 +25,8 @@ class ToDoMToDoListItemViewModelainScreenViewModel: ObservableObject {
             .document(newItem.id)
             .setData(newItem.asDictionary())
     }
+    
+    // MARK: - init
+    
+    init() {}
 }

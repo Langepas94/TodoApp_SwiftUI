@@ -9,6 +9,9 @@ import Foundation
 import FirebaseAuth
 
 class MainViewModel: ObservableObject {
+    
+    // MARK: - public properties
+    
     @Published var currentUserID: String = ""
     @Published var completion: AuthStateDidChangeListenerHandle?
     
@@ -16,6 +19,8 @@ class MainViewModel: ObservableObject {
         return Auth.auth().currentUser != nil
         
     }
+    
+    // MARK: - public methods
     
     func checkAuth() {
         self.completion = Auth.auth().addStateDidChangeListener { [weak self] auth, user in
@@ -25,8 +30,6 @@ class MainViewModel: ObservableObject {
                 
             }
         }
-        print(isSignedIn)
-        print(self.currentUserID)
     }
     
     init() {
