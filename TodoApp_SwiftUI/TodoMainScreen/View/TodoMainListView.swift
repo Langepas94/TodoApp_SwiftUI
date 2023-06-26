@@ -8,19 +8,38 @@
 import SwiftUI
 
 struct TodoMainListView: View {
+    
+    @StateObject var viewModel = ToDoMainScreenViewModel()
+    
+    private let userID: String
+    
+    init(userID: String) {
+        self.userID = userID
+    }
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        NavigationView {
+            VStack {
+            
+            }
+            .navigationTitle("ToDo list")
+            .toolbar {
+                Button {
+                    viewModel.showingNewItemView = true
+                } label: {
+                    Image(systemName: "plus")
+                }
+
+            }
+            .sheet(isPresented: $viewModel.showingNewItemView) {
+                NewItemView(newItemPresented: $viewModel.showingNewItemView)
+            }
         }
-        .padding()
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        TodoMainListView()
+        TodoMainListView(userID: "")
     }
 }

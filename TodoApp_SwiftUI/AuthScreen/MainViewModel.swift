@@ -10,18 +10,26 @@ import FirebaseAuth
 
 class MainViewModel: ObservableObject {
     @Published var currentUserID: String = ""
-    private var completion: AuthStateDidChangeListenerHandle?
+    @Published var completion: AuthStateDidChangeListenerHandle?
     
     public var isSignedIn: Bool {
         return Auth.auth().currentUser != nil
     }
     
-    init() {
-        
+    func checkAuth() {
         self.completion = Auth.auth().addStateDidChangeListener { [weak self] auth, user in
+            guard let self = self else { return }
             DispatchQueue.main.async {
-                self?.currentUserID = user?.uid ?? ""
+                self.currentUserID = user?.uid ?? ""
+                
             }
         }
+        print(isSignedIn)
+        print(self.currentUserID)
+    }
+    
+    init() {
+        checkAuth()
+        
     }
 }

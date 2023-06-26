@@ -14,14 +14,26 @@ struct MainSuperView: View {
     var body: some View {
         
         if viewModel.isSignedIn, !viewModel.currentUserID.isEmpty {
-                TodoMainListView()
+          accountView
             } else {
                 
                 AuthView()
                 
             }
-           
-        
+    }
+    
+    @ViewBuilder
+    var accountView: some View {
+        TabView {
+            TodoMainListView(userID: viewModel.currentUserID)
+                .tabItem {
+                    Label("Home", systemImage: "house")
+                }
+            ProfileScreen()
+                .tabItem {
+                    Label("Profile", systemImage: "person.circle")
+                }
+        }
     }
 }
 
