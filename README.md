@@ -1,7 +1,8 @@
 # TodoApp_SwiftUI
 
-Create SwiftUI app by swiftui course
-- Using Firebase
+- MVVM  
+- Firebase  
+- SwiftUI  
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/108129792/248758172-9293460c-4af4-45da-a06b-aed67458540b.png" width="250" alt="accessibility text">
